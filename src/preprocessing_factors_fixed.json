@@ -1,0 +1,42 @@
+{
+    "source": "https://raw.githubusercontent.com/4GeeksAcademy/decision-tree-project-tutorial/main/diabetes.csv",
+    "steps": [
+        "Cargar datos desde CSV",
+        "Eliminar duplicados",
+        "Divisi\u00f3n en variables (X) y target (y)",
+        {
+            "Selecci\u00f3n de caracter\u00edsticas con SelectKBest (k=7)": [
+                "Pregnancies",
+                "Glucose",
+                "BloodPressure",
+                "Insulin",
+                "BMI",
+                "DiabetesPedigreeFunction",
+                "Age"
+            ]
+        },
+        "Divisi\u00f3n en entrenamiento y prueba (80% / 20%)",
+        "Guardado en clean_train.csv y clean_test.csv"
+    ],
+    "train_test_split": {
+        "train_size": 0.8,
+        "test_size": 0.2,
+        "random_state": 42
+    },
+    "model": {
+        "type": "DecisionTreeClassifier",
+        "original_accuracy": 0.7597,
+        "optimized_accuracy": 0.7727,
+        "best_params": {
+            "criterion": "entropy",
+            "max_depth": 5,
+            "min_samples_leaf": 4,
+            "min_samples_split": 2
+        }
+    },
+    "output_files": [
+        "data/processed/clean_train.csv",
+        "data/processed/clean_test.csv",
+        "models/tree_classifier_crit-entro_maxdepth-5_minleaf-4_minsplit2_42.sav"
+    ]
+}
